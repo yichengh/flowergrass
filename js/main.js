@@ -106,6 +106,7 @@ function turn(elem) {
   }
 
   if(/photo_front/.test(cls)) {
+    window.location.href="clock.html";
     cls = cls.replace(/photo_front/, 'photo_back'); 
     select('#nav_' + n).className += ' i_back ';
   } else {
