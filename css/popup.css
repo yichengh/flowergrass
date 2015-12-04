@@ -17,6 +17,7 @@
 }
 .popup-bigic .img-bigic {
 	position: absolute;
+	opacity:0;
 }
 .option-bigic {
 	position: absolute;

@@ -76,6 +76,11 @@
 
                 $('#LoadingBigic').remove();
                 oThis.$popup.append('<img id="imgBigic" class="img-bigic" src="'+ oThis.sImgSrc +'" />');
+
+                // 图片进入动画
+                $("#imgBigic").hide();
+                $("#imgBigic").animate({opacity:'1'},10);
+                $("#imgBigic").show(1000);
                 oThis.$img = $('#imgBigic');
                 
                 oThis.zoom();
@@ -109,6 +114,7 @@
                  oThis.$popup.remove();
                 }
             });
+
             // 事件绑定 - 关闭弹窗
             $('#closeBigic').off().on('click',function(){
                 $('body').html(bodyhtml);
@@ -177,6 +183,61 @@
                 this.$popup.css({'width': this.nWinWid +'px', 'height': this.nWinHei+'px'});
                 this.move(true);
             }
+        }
+
+
+        /*
+         * 图片移动事件
+         */
+        Bigic.prototype.move = function(bln){
+            var _x, _y, _winW, _winH,
+                _move = false,
+                _boxW = this.nImgWid,
+                _boxH = this.nImgHei,
+                oThis = this;
+
+                if(!oThis.$img) return;
+                // 解除绑定
+                if(!bln){
+                    oThis.$img.off('.bigic');
+                    $(document).off('.bigic');
+                    return;
+                }
+
+                // 弹窗移动
+                oThis.$img.off('.bigic').on({
+                    'click.bigic': function(e){
+                            e.preventDefault();
+                        },
+                    'mousedown.bigic': function(e){
+                            e.preventDefault();
+                            _move=true;
+                            _x=e.pageX-parseInt(oThis.$img.css("left"));
+                            _y=e.pageY-parseInt(oThis.$img.css("top"));
+                            _winW = oThis.nWinWid;
+                            _winH = oThis.nWinHei;
+                            oThis.$img.css('cursor','move');
+                        }
+                });
+                $(document).off('.bigic').on({
+                    'mousemove.bigic': function(e){
+                            e.preventDefault();
+                            if(_move){
+                                var x=e.pageX-_x;
+                                var y=e.pageY-_y;
+                                if(x > 0) x = 0;
+                                if(y > 0) y = 0;
+                                if(_winW && x < _winW-_boxW) x = _winW - _boxW;
+                                if(_winH && y < _winH-_boxH) y = _winH - _boxH;
+                                if(oThis.bMoveX) oThis.$img[0].style.left = x +'px';
+                                if(oThis.bMoveY) oThis.$img[0].style.top = y +'px';
+                            }
+                        },
+                    'mouseup.bigic': function(){
+                            _move=false;
+                            oThis.$img.css('cursor','default');
+                        }
+                });
         }
 
         /*
