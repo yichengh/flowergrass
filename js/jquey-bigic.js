@@ -41,7 +41,7 @@
                 var sTagName = this.tagName.toLowerCase();
                 if(sTagName == 'img'){
                     // 更新基础变量
-                    oThis.sImgSrc = this.getAttribute('src');
+                    oThis.sImgSrc = this.getAttribute('big');
                     oThis.sImgStatus = 'min';
                     // 显示弹窗
                     oThis.show();
