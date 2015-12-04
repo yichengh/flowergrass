@@ -490,7 +490,8 @@ svg {
 }
 .col-md-2 {
 width:33.33333333%;
-float:left
+height:33.33333333%;
+float:left;
 }
 .site-main {
  margin-top:0px;
