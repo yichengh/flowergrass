@@ -1,4 +1,4 @@
-<!-- <!doctype html>
+<!doctype html>
 
 <head>
 
@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+<link rel="shortcut icon" type="image/png" href="images/favicon.jpg"/>
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="images/favicon.ico">
@@ -24,73 +24,17 @@
 
 <!-- / Site Header -->
 <div class="site-header">
-
-    <!-- / Site Logo -->
-    <div class="site-logo">
-        <a href="">
-            <img src="images/site-logo.png" height="40px" />
-        </a>
-    </div>
-    <!-- \ Site Logo -->
-
-    <!-- / Site Menu -->
-    <div class="site-menu">
-        <div class="icon"></div>
-        <div class="menu">
-            <ul>
-                <li>
-                    <a href="index.html">Portfolio</a>
-                </li>
-                <li>
-                    <a href="about.html">About</a>
-                </li>
-                <li>
-                    <a href="portfolio-single.html">Portfolio Single</a>
-                </li>
-                <li>
-                    <a href="blog.html">Blog / News</a>
-                </li>
-                <li>
-                    <a href="blog-single.html">Blog Single</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-                <li>
-                    <a href="shortcodes.html">Shortcodes</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- \ Site Menu -->
-    / Site Description
-    <h1>
-        A smart minimal portfolio theme specially made for designers & photographers.
-    </h1>
-    <!-- \ Site Description -->
-
-    <!-- / Site Footer -->
-    <div class="site-footer">
-        <div class="site-social">
-            <ul>
-                <li> <i class="pe-so-dribbble pe-lg pe-va"></i>
-                </li>
-                <li> <i class="pe-so-facebook pe-lg pe-va"></i>
-                </li>
-                <li>
-                    <i class="pe-so-twitter pe-lg pe-va"></i>
-                </li>
-            </ul>
-        </div>
-
-        <p>© 2015 Finec</p>
-        <p>
-            Html Theme by
-            <a href="http://themeraid.com">ThemeRaid</a>
-        </p>
-    </div>
-    <!-- \ Site Footer -->
-
+	<!-- / Site Logo -->
+	<div class="site-logo"></div>
+	<!-- / Site Menu -->
+	<div class="site-menu">
+		<div class="icon"></div>
+		<div class="menu"></div>
+	</div>
+	<!-- / Site Description -->
+	<h1 id = "site_description"></h1>
+	<!-- / Site Footer -->
+	<div class="site-footer"></div>
 </div>
 <!-- \ Site Header -->
 
@@ -109,7 +53,7 @@
 
 <!-- jQuery -->
 <script src="js/jQuery/jquery-2.1.1.js"></script>
-
+<script src="js/load_header.js"></script>
 <!-- Theme Functions -->
 <script src="js/functions.js"></script>
 
@@ -117,5 +61,11 @@
 
 <script type="text/javascript" src="js/digit.js"></script>
 <script type="text/javascript" src="js/countdown.js"></script>
+
+<script>
+    $(document).ready(function(){
+        loadHeader();
+    });
+</script>
 </body>
 </html>
