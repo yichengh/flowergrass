@@ -1,22 +1,24 @@
-﻿var RADIUS = 6;// 小球半径
-var MARGIN_LEFT = 200;// 左边距
-var MARGIN_TOP = 50;// 上边距
+﻿var RADIUS = 4;// 小球半径
+var MARGIN_LEFT_1 = 90;// 左边距
+var MARGIN_LEFT_2 = 124;// 左边距
+var MARGIN_TOP = 25;// 上边距
 var beginTime = new Date(2015,7,20,0,0,0);// 时间
 var curShowTimeSeconds = 0;// 当前是秒数
 
 var balls = [];
 var colors=["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444"];// 小球颜色池
-var days_x = [MARGIN_LEFT + 120 + 15*(RADIUS+1), MARGIN_LEFT + 120 + 30*(RADIUS+1), MARGIN_LEFT + 120 + 45*(RADIUS+1)];
-var hours_x = [MARGIN_LEFT, MARGIN_LEFT + 15*(RADIUS+1)];
-var minutes_x = [MARGIN_LEFT + 39*(RADIUS+1), MARGIN_LEFT + 54*(RADIUS+1)];
-var seconds_x = [MARGIN_LEFT+ 78*(RADIUS+1), MARGIN_LEFT + 93*(RADIUS+1)];
+var days_x = [MARGIN_LEFT_1 + 120 + 15*(RADIUS+1), MARGIN_LEFT_1 + 120 + 30*(RADIUS+1), MARGIN_LEFT_1 + 120 + 45*(RADIUS+1)];
+
+var hours_x = [MARGIN_LEFT_2, MARGIN_LEFT_2 + 15*(RADIUS+1)];
+var minutes_x = [MARGIN_LEFT_2 + 39*(RADIUS+1), MARGIN_LEFT_2 + 54*(RADIUS+1)];
+var seconds_x = [MARGIN_LEFT_2 + 78*(RADIUS+1), MARGIN_LEFT_2 + 93*(RADIUS+1)];
 
 var days_y = [MARGIN_TOP, MARGIN_TOP, MARGIN_TOP];
 var hours_y = [MARGIN_TOP + 27*(RADIUS+1), MARGIN_TOP + 27*(RADIUS+1)];
 var minutes_y = [MARGIN_TOP + 27*(RADIUS+1), MARGIN_TOP + 27*(RADIUS+1)];
 var seconds_y = [MARGIN_TOP + 27*(RADIUS+1), MARGIN_TOP + 27*(RADIUS+1)];
 
-var offset1 = 10 + 14*(RADIUS+1);
+var offset1 = 10 + 10*(RADIUS+1);
 var offset2 = 20*(RADIUS+1);
 var days_text_x = days_x[2] + offset1;
 var days_text_y = days_y[2] + offset2;
@@ -90,13 +92,13 @@ function updateBalls(){
 		balls[i].y+=balls[i].vy;
 		
 	//	alert(balls[i].y);
-		if(balls[i].y>600-balls[i].r){// 屏幕的底部
-			balls[i].y=600-balls[i].r;
+		if(balls[i].y>400-balls[i].r){// 屏幕的底部
+			balls[i].y=400-balls[i].r;
 			balls[i].vy = -balls[i].vy*0.6;
 		}else{
 			balls[i].vy+=balls[i].g;
 		}
-		if (balls[i].x >= 0 && balls[i].x <= 1200)
+		if (balls[i].x >= 0 && balls[i].x <= 800)
 			tmp_balls.push(balls[i]);
 	}
 	balls = tmp_balls;
