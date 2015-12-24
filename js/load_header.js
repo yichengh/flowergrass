@@ -1,3 +1,7 @@
+    $(document).ready(function(){
+        loadHeader();
+    });
+
 function loadHeader() {
     var html_logo = [];
     html_logo.push("\
