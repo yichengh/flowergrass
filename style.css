@@ -234,7 +234,8 @@ svg {
 }
 .blog .post {
 	margin-bottom:40px;
-	float:left
+	float:left;
+	width:100%;
 }
 .blog .post h2, p, .date {
 	width:100%;
