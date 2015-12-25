@@ -33,10 +33,10 @@ function loadHeader() {
     html_footer.push("\
     <div class=\"site-social\"> \
     <ul> \
-        <a href=\"http://weibo.com/u/2095764045\"> \
+        <a href=\"http://weibo.com/u/2095764045\" target=\"_blank\"> \
         <li> <i class=\"pe-so-weibo pe-lg pe-va\"> \
         </i> </li> </a>\
-        <a href=\"https://www.facebook.com/yicheng.huang.75\"> \
+        <a href=\"https://www.facebook.com/yicheng.huang.75\" target=\"_blank\"> \
         <li> <i class=\"pe-so-facebook pe-lg pe-va\"> \
         </i> </li> </a>\
     </ul> \
