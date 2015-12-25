@@ -43,7 +43,7 @@ function loadHeader() {
     </div>");
 
     html_footer.push("\
-    <p>Built by <a href=mailto:anorange0409@gmail.com>Yicheng Huang </a>\
+    <p>Built by <a href=mailto:anorange0409@gmail.com>anorange0409</a>\
     <p> \
     HTML Theme by \
     <a href=\"http://themeraid.com\">ThemeRaid</a> \
