@@ -13,25 +13,16 @@ function loadHeader() {
     html_menu.push("\
     <ul> \
         <li> \
-            <a href=\"index.html\">Portfolio</a> \
+            <a href=\"index.html\">About</a> \
         </li> \
         <li> \
-            <a href=\"about.html\">About</a> \
+            <a href=\"time.html\">Time</a> \
         </li> \
         <li> \
-            <a href=\"portfolio-single.html\">Portfolio Single</a> \
+            <a href=\"moments.html\">Moments</a> \
         </li> \
         <li> \
-            <a href=\"blog.html\">Blog / News</a> \
-        </li> \
-        <li> \
-            <a href=\"blog-single.html\">Blog Single</a> \
-        </li> \
-        <li> \
-            <a href=\"contact.html\">Contact</a> \
-        </li> \
-        <li> \
-            <a href=\"shortcodes.html\">Shortcodes</a> \
+            <a href=\"videos.html\">Videos</a> \
         </li> \
     </ul> ");
 
