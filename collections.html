@@ -2,7 +2,7 @@
 
 <head>
 
-<title>Finec - Responsive Portfolio Theme for Designers & Photographers</title> 
+<title>Picture Collections</title> 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="keywords" content="" />
@@ -40,9 +40,11 @@
 <!-- \ Site Header -->
 
 <!-- \ Site Main -->
-<div class="site-main" id="amazing_wall">
+<div class="site-main">
+	<div id="amazing_wall"></div>
+	<br/><br/>
+	<a class="btn btn-info" href="moments.html" role="button">Back to Moments</a>
 </div>
-
 <!-- / JS Files  -->
 
 <!-- jQuery -->
@@ -61,7 +63,9 @@
 
 <script>
 	$(document).ready(function(){
-  		loadFiles(1);
+		var hash = window.location.hash;
+		var number = hash.substr(1);
+  		loadFiles(number);
   		$('img').bigic();
 	});
 </script>

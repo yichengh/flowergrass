@@ -1,4 +1,7 @@
 #ignore image file
 *.jpg
 *.png
+*.JPG
 
+#ignore video file
+*.mp4
