@@ -27,7 +27,7 @@ function loadHeader() {
     </ul> ");
 
     var html_description = [];
-    html_description.push("A smart minimal portfolio theme specially made for designers & photographers.");
+    html_description.push("A tiny website made for recording our love.");
 
     var html_footer = [];
     html_footer.push("\
