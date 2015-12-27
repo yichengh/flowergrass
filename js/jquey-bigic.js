@@ -68,6 +68,8 @@
                 oImg = new Image();
 
             oThis.popup();   // 显示弹窗
+            console.log('this');
+            oThis.$popup.append('<h1 style="text-align:center;position: absolute; left: 50%; top: 40%;"> Loading the picture, please wait... </h1>');
 
             // 图片加载
             oImg.onload = function(){
@@ -79,6 +81,7 @@
                 oThis.$popup.append('<img id="imgBigic" class="img-bigic" src="'+ oThis.sImgSrc +'" />');
 
                 // 图片进入动画
+                $("h1").hide();
                 $("#imgBigic").hide();
                 $("#imgBigic").animate({opacity:'1'},10);
                 $("#imgBigic").show(1000);
