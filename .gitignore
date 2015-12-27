@@ -8,3 +8,6 @@
 
 #ignore txt files
 *.txt
+
+#ignore exe files
+*.exe
