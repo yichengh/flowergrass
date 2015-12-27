@@ -11,15 +11,20 @@ function loadFiles(number) {
  console.log("index " + index);
  console.log(list);
  for (var i = 0; i < list.length - 1; i++) {
-    var data = list[i].split(" ");
+    var data = list[i].split("  ");
     console.log(data);
     var filename = "photo/s" + index + "/" + data[0];
     var filename_s = "photo/s" + index + "/thumb/" + data[0];
     var title = "";
     var desc = "";
-    if (data.length > 1) title = data[1];
-    if (data.length > 2) desc = data[2];
-    //console.log(filename);
+    if (data.length > 1) {
+        title = data[1];
+        console.log("title " + title);
+    }
+    if (data.length > 2) {
+        desc = data[2];
+        console.log("desc " + desc);
+    }
     //console.log(filename_s);
     var single = [];
     single.push("<li class=\"col-md-2 post\"><figure>");
