@@ -1,7 +1,10 @@
-#ignore image file
+#ignore image files
 *.jpg
 *.png
 *.JPG
 
-#ignore video file
+#ignore video files
 *.mp4
+
+#ignore txt files
+*.txt
