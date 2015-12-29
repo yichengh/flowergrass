@@ -13,7 +13,7 @@ function loadFiles(number) {
  for (var i = 0; i < list.length - 1; i++) {
     var data = list[i].split("  ");
     console.log(data);
-    var filename = "photo/s" + index + "/" + data[0];
+    var filename = "photo/s" + index + "/compress/" + data[0];
     var filename_s = "photo/s" + index + "/thumb/" + data[0];
     var title = "";
     var desc = "";
