@@ -106,7 +106,7 @@
                   +         '<span id="closeBigic" class="close-bigic">关闭</span>'
                   +     '</div>'
                   +  '</div>'
-                  +  '<h1  style="text-align:center; position: absolute;left:50%;top:50%;margin-left:-135px;margin-top:-100px;"><img src="images/preloder.gif" /><br/><br/>Loading image...</h1>';
+                  +  '<h1  style="text-align:center; position: absolute;left:50%;top:50%;margin-left:-135px;margin-top:-100px;"><img src="images/preloader.gif" /><br/><br/>Loading image...</h1>';
             var bodyhtml = $('body').html();
             $('body').html(sHtml);
             oThis.$popup = $('#popupBigic');
