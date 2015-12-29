@@ -42,7 +42,8 @@
                 if(sTagName == 'img'){
                     // 更新基础变量
                     oThis.sImgSrc = this.getAttribute('bigimage');
-                    console.log("bigimage" + oThis.sImgSrc);
+                   // oThis.sImgSrc = "http://p2.gexing.com/G1/M00/9E/79/rBACE1LhEiCCjq0nAADpsQnGPGg169_600x.jpg";
+                    console.log("bigimage " + oThis.sImgSrc);
                     oThis.sImgStatus = 'min';
                     // 显示弹窗
                     oThis.show();
@@ -69,7 +70,6 @@
 
             oThis.popup();   // 显示弹窗
             console.log('this');
-            oThis.$popup.append('<h1 style="text-align:center;position: absolute; left: 50%; top: 40%;"> Loading the picture, please wait... </h1>');
 
             // 图片加载
             oImg.onload = function(){
@@ -77,11 +77,12 @@
                 oThis.nImgHei = this.height;
                 oThis.nImgRate = oThis.nImgWid/oThis.nImgHei;
 
-                $('#LoadingBigic').remove();
+                
                 oThis.$popup.append('<img id="imgBigic" class="img-bigic" src="'+ oThis.sImgSrc +'" />');
-
+                console.log('load finished');
                 // 图片进入动画
                 $("h1").hide();
+                //$('#LoadingBigic').hide();
                 $("#imgBigic").hide();
                 $("#imgBigic").animate({opacity:'1'},10);
                 $("#imgBigic").show(1000);
@@ -105,6 +106,7 @@
                   +         '<span id="closeBigic" class="close-bigic">关闭</span>'
                   +     '</div>'
                   +     '<img id="LoadingBigic" class="loading-bigic" src="preloader.gif" />'
+                //  +   '<h1 style="text-align:center;position: absolute; left: 50%; top: 40%;"> Loading the picture, please wait... </h1>'
                   +  '</div>';
             var bodyhtml = $('body').html();
             $('body').html(sHtml);
