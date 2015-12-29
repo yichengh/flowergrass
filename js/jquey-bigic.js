@@ -1,4 +1,4 @@
-/**
+﻿/**
  * jQuery Plugin bigic v1.0.0
 /*
 */
@@ -116,8 +116,10 @@
             $(document).keyup(function(event){
                 switch(event.keyCode) {
                 case 27:
-                 $('body').html(bodyhtml);
+                 oThis.oImg.remove();
+		 delete oThis.oImg;
                  oThis.$popup.remove();
+		 $('body').html(bodyhtml);
                 }
             });
 
