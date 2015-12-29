@@ -21,6 +21,7 @@
             this.nImgRate = 0;
             this.sImgStatus;
             this.sImgSrc,
+            this.oImg,
             this.bMoveX = true,
             this.bMoveY = true;
 
@@ -65,14 +66,14 @@
          * 弹窗初始化
          */
         Bigic.prototype.show = function(){
-            var oThis = this,
-                oImg = new Image();
+            var oThis = this;
+            oThis.oImg = new Image();
 
             oThis.popup();   // 显示弹窗
             console.log('this');
 
             // 图片加载
-            oImg.onload = function(){
+            oThis.oImg.onload = function(){
                 oThis.nImgWid = this.width;
                 oThis.nImgHei = this.height;
                 oThis.nImgRate = oThis.nImgWid/oThis.nImgHei;
@@ -90,7 +91,7 @@
                 
                 oThis.zoom();
             }
-            oImg.src = oThis.sImgSrc;
+            oThis.oImg.src = oThis.sImgSrc;
         }
 
         /*
