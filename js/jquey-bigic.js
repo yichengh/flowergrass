@@ -105,9 +105,8 @@
                   +         '<span id="changeBigic" class="change-bigic min-bigic" state-bigic="min">放大</span>'
                   +         '<span id="closeBigic" class="close-bigic">关闭</span>'
                   +     '</div>'
-                  +     '<img id="LoadingBigic" class="loading-bigic" src="preloader.gif" />'
-                //  +   '<h1 style="text-align:center;position: absolute; left: 50%; top: 40%;"> Loading the picture, please wait... </h1>'
-                  +  '</div>';
+                  +  '</div>'
+                  +  '<h1  style="text-align:center; position: absolute;left:50%;top:50%;margin-left:-135px;margin-top:-100px;"><img src="images/preloder.gif" /><br/><br/>Loading image...</h1>';
             var bodyhtml = $('body').html();
             $('body').html(sHtml);
             oThis.$popup = $('#popupBigic');
