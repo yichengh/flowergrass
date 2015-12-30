@@ -13,7 +13,7 @@ function loadHeader() {
     html_menu.push("\
     <ul> \
         <li> \
-            <a href=\"index.html\">About</a> \
+            <a href=\"index.html\">Index</a> \
         </li> \
         <li> \
             <a href=\"time.html\">Time</a> \
