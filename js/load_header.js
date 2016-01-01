@@ -34,11 +34,9 @@ function loadHeader() {
     <div class=\"site-social\"> \
     <ul> \
         <a href=\"http://weibo.com/u/2095764045\" target=\"_blank\"> \
-        <li> <i class=\"pe-so-weibo pe-lg pe-va\"> \
-        </i> </li> </a>\
+        <li> <img src='images/weibo.png'/>  </li> </a>\
         <a href=\"https://www.facebook.com/yicheng.huang.75\" target=\"_blank\"> \
-        <li> <i class=\"pe-so-facebook pe-lg pe-va\"> \
-        </i> </li> </a>\
+        <li> <img src='images/facebook.png'/> </li> </a>\
     </ul> \
     </div>");
 
