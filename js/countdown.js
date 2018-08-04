@@ -7,21 +7,21 @@ var curShowTimeSeconds = 0;// 当前是秒数
 
 var balls = [];
 var colors=["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444"];// 小球颜色池
-var days_x = [MARGIN_LEFT_1 + 120 + 15*(RADIUS+1), MARGIN_LEFT_1 + 120 + 30*(RADIUS+1), MARGIN_LEFT_1 + 120 + 45*(RADIUS+1)];
+var days_x = [MARGIN_LEFT_1 + 120 + 7*(RADIUS+1), MARGIN_LEFT_1 + 120 + 22*(RADIUS+1), MARGIN_LEFT_1 + 120 + 37*(RADIUS+1), MARGIN_LEFT_1 + 120 + 52*(RADIUS+1)];
 
 var hours_x = [MARGIN_LEFT_2, MARGIN_LEFT_2 + 15*(RADIUS+1)];
 var minutes_x = [MARGIN_LEFT_2 + 39*(RADIUS+1), MARGIN_LEFT_2 + 54*(RADIUS+1)];
 var seconds_x = [MARGIN_LEFT_2 + 78*(RADIUS+1), MARGIN_LEFT_2 + 93*(RADIUS+1)];
 
-var days_y = [MARGIN_TOP, MARGIN_TOP, MARGIN_TOP];
+var days_y = [MARGIN_TOP, MARGIN_TOP, MARGIN_TOP, MARGIN_TOP];
 var hours_y = [MARGIN_TOP + 27*(RADIUS+1), MARGIN_TOP + 27*(RADIUS+1)];
 var minutes_y = [MARGIN_TOP + 27*(RADIUS+1), MARGIN_TOP + 27*(RADIUS+1)];
 var seconds_y = [MARGIN_TOP + 27*(RADIUS+1), MARGIN_TOP + 27*(RADIUS+1)];
 
 var offset1 = 10 + 10*(RADIUS+1);
 var offset2 = 20*(RADIUS+1);
-var days_text_x = days_x[2] + offset1;
-var days_text_y = days_y[2] + offset2;
+var days_text_x = days_x[3] + offset1;
+var days_text_y = days_y[3] + offset2;
 var hours_text_x = hours_x[1] + offset1;
 var hours_text_y = hours_y[1] + offset2;
 var minutes_text_x = minutes_x[1] + offset1;
@@ -49,16 +49,17 @@ function update(){
 	getDateDetails(nextShowTimeSeconds);
 
 	if(nextShowTimeSeconds != curShowTimeSeconds) {
-
-
-		if(parseInt(lastDays/100)!=parseInt(days/100)){
-			addBalls(days_x[0],days_y[0],parseInt(days/100));
+		if(parseInt(lastDays/1000)!=parseInt(days/1000)){
+			addBalls(days_x[0],days_y[0],parseInt(days/1000));
+		}
+		if(parseInt(lastDays%1000/100)!=parseInt(days%1000/100)){
+			addBalls(days_x[1],days_y[1],parseInt(days%1000/100));
 		}
 		if(parseInt(lastDays%100/10)!=parseInt(days%100/10)){
-			addBalls(days_x[1],days_y[1],parseInt(days%100/10));
+			addBalls(days_x[2],days_y[2],parseInt(lastDays%100/10));
 		}
 		if(parseInt(lastDays%10)!=parseInt(days%10)){
-			addBalls(days_x[2],days_y[2],parseInt(days%10));
+			addBalls(days_x[3],days_y[3],parseInt(lastDays%10));
 		}
 
 		if(parseInt(lastHours/10)!=parseInt(hours/10)){
@@ -81,6 +82,7 @@ function update(){
 		}
 		curShowTimeSeconds = nextShowTimeSeconds;
 		console.info("lengh of balls : " + balls.length);
+		
 	}
 	updateBalls();
 }
@@ -134,6 +136,7 @@ function getCurShowTImeSeconds(){
 }
 
 function getDateDetails(allseconds) {
+	// allseconds = allseconds + (3.2 - 24*81)*3600 - 170;
 	lastDays = days, lastHours = hours;
 	lastMinutes = minutes, lastSeconds = seconds;
 	days = parseInt(allseconds/3600/24);
@@ -147,9 +150,10 @@ function render(ctx){
 
 	getDateDetails(curShowTimeSeconds);
 
-	renderDigit(days_x[0],days_y[0],parseInt(days/100),ctx,"#AA66CC");
-	renderDigit(days_x[1],days_y[1],parseInt(days%100/10),ctx,"#AA66CC");
-	renderDigit(days_x[2],days_y[2],parseInt(days%10),ctx,"#AA66CC");
+	renderDigit(days_x[0],days_y[0],parseInt(days/1000),ctx,"#AA66CC");
+	renderDigit(days_x[1],days_y[1],parseInt(days%1000/100),ctx,"#AA66CC");
+	renderDigit(days_x[2],days_y[2],parseInt(days%100/10),ctx,"#AA66CC");
+	renderDigit(days_x[3],days_y[3],parseInt(days%10),ctx,"#AA66CC");
 
 	renderDigit(hours_x[0],hours_y[0],parseInt(hours/10),ctx,"#FF4444");
 	renderDigit(hours_x[1],hours_y[1],parseInt(hours%10),ctx,"#FF4444");
